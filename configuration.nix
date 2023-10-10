@@ -8,14 +8,15 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # Define a custom mount & volume encryption options here here.
+      # Define custom mounts & volume encryption options here here.
       ./custom-mount.nix
-      # Define a user account. Don't forget to set a password with ‘passwd’.
+      # Define user accounts here. Don't forget to set a password with ‘passwd’.
       ./users.nix
-
+      # Define installed programs here
+      ./programs.nix
 
       # Use NVIDIA proprietary driver, don't forget to set nixpkgs.config.allowUnfree = true;
-      ./misc/nvidia.nix
+      #./misc/nvidia.nix
       # Increase password hashing strength
       ./system/pam.nix
       # Boot configurations are here
@@ -23,7 +24,6 @@
       # Audio configurations
       ./misc/audio.nix
 
-      #./programs.nix
 
     ];
 
