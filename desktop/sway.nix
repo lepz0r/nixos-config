@@ -46,6 +46,7 @@ imports = [
             ./misc/gtklock.nix
             ./misc/foot.nix
             ./misc/waybar-sway.nix
+            ./misc/rofi-config.nix
           ];
 
 environment.systemPackages = with pkgs; [
@@ -95,6 +96,9 @@ environment.etc.sway = {
          
          # Set gaps size
          gaps inner 4
+         ''
+         + "output * bg " + pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath + " fill" +
+         ''
 
          # Only enable gaps on a workspace when there is at least one container
          smart_gaps on
@@ -105,6 +109,9 @@ environment.etc.sway = {
          exec_always sh -c "until killall swaybar; do sleep 0.5; done"
 
          exec waybar
+
+         set $menu /etc/run-rofi.sh -show drun
+         bindsym --no-warn $mod+d exec $menu
          '';
 };
 }

@@ -12,6 +12,11 @@
       ./custom-mount.nix
       # Define user accounts here. Don't forget to set a password with ‘passwd’.
       ./users.nix
+
+      # Desktop Environment/Window Manager config
+      # Use sway
+      ./desktop/sway.nix
+
       # Define installed programs here
       ./programs.nix
 
@@ -94,14 +99,14 @@
 
   # Set environment variables
   environment.sessionVariables = rec {
-    WLR_NO_HARDWARE_CURSORS="1";
-    WLR_RENDERER_NO_ATOMIC="1";
+    #WLR_NO_HARDWARE_CURSORS="1";
+    #WLR_RENDERER_NO_ATOMIC="1";
     MOZ_ENABLE_WAYLAND="1";
-    WLR_RENDERER="vulkan";
-    QT_QPA_PLATFORM="wayland-egl";
+    #WLR_RENDERER="vulkan";
+    #QT_QPA_PLATFORM="wayland-egl";
     NIXOS_OZONE_WL = "1";
     #GTK_THEME="adw-gtk3";
-    SDL_VIDEODRIVER="wayland";
+    #SDL_VIDEODRIVER="wayland";
     # Not officially in the specification
     XDG_BIN_HOME    = "$HOME/.local/bin";
     PATH = [ 
