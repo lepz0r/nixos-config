@@ -1,0 +1,188 @@
+
+
+window#waybar.chromium-browser-chromium, window#waybar.chrome, window#waybar.chromium{
+        background: #17181e;
+} 
+@define-color bg-color #282a36;
+@define-color fg-color #f8f8f2;
+@define-color accent-color #bd93f9;
+
+@define-color selected-bg-color @accent-color;
+@define-color selected-fg-color @fg-color;
+@define-color tray-bg-color @accent-color; 
+@define-color tray-fg-color @fg-color; 
+@define-color bar-bg-color @bg-color;
+@define-color terminal-bg-color @bg-color;
+
+
+/* Firefox & LibreWolf */
+window#waybar.firefox, window#waybar.librewolf, window#waybar.LibreWolf, window#waybar.firedragon{
+        background: #282a36;
+}
+
+/* window#waybar.gimp{
+	background: #484848;
+	color: #ffffff;
+} */
+window#waybar.solo{
+        background: @bar-bg-color;
+}
+
+window#waybar.foot, window#waybar.kitty, window#waybar.Alacritty, window#waybar.urxvt, window#waybar.org\.wezfurlong\.wezterm{
+        background: @terminal-bg-color
+}
+
+window#waybar.gimp{
+	background: #484848;
+	color: #ffffff;
+}
+
+window#waybar.spotify, window#waybar.mpv, window#waybar.imv, window#waybar.glxgears{
+        background: #000000;
+	color: #ffffff;
+}
+
+window#waybar.steam{
+	background:#2a2e33;
+	color: #b8b6b4;
+}
+
+window#waybar.DesktopEditors{
+	background:#404040;
+}
+
+/* Discord default theme */
+window#waybar.discord{
+        background: #36393f;
+        color: #f2f3f5;
+}
+
+window#waybar.wireshark, window#waybar.gimp{
+	background: @bg-color;
+}
+
+
+
+* {
+    border: none;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 12px;
+}
+
+#custom-timeprefix, #custom-cpuprefix, #pulseaudio.prefix, #custom-dateprefix, #custom-cpuprefix, #custom-memoryprefix, #custom-playerctl-prefix, #custom-playerctl-prefix{
+    font-size: 12px;
+}
+
+#custom-playerctl-prefix{
+    font-size: 13px;
+}
+
+
+#pulseaudio, #custom-cc{
+    background: @tray-bg-color;
+    color: @tray-fg-color;
+}
+
+
+#tray, #custom-trayright{
+	background: @tray-bg-color;
+}
+
+#custom-trayright {
+    	border-radius: 0px 16px 16px 0px ;
+	margin: 4px 4px 4px 0px;
+	padding-right: 4px;
+}
+
+
+window {
+    /* background: @fg-color; */
+    background: rgba(30, 30, 46, 0);
+    color: @fg-color;
+}
+
+#window, #clock, #custom-timeprefix, #custom-cpuprefix, #custom-memoryprefix,#cpu, #custom-dateprefix, #custom-memoryprefix, #memory, #pulseaudio, #tray, #custom-playerctl, #custom-playerctl-prefix, #custom-cc{
+margin: 4px 0px 4px 0px;
+padding-right: 4px;
+}
+
+
+#window {
+	border-radius: 16px;
+        /*background: @bg-color;*/
+    	background: @bg-color;
+	padding: 3px;
+}
+
+#tray {
+	padding: 0px 6px 0px 6px;
+	margin-right:-6px;
+}
+
+
+window#waybar.empty #window, window#waybar.solo #window{
+	background: transparent;
+}
+
+window#waybar.floating, window#waybar.tiled{
+        background: transparent;
+}
+
+/* dynamic color for some apps */
+
+
+#custom-playerctl, #custom-playerctl-prefix {
+	background: @bg-color;
+	color: @fg-color;
+}
+
+#custom-barpadding{
+	font-size : 0px;
+	color: transparent;
+}
+
+#workspaces {
+	all: initial;
+        background: @bg-color;
+	border-radius: 16px 16px 16px 16px ;
+        margin: 4px 0px 4px 4px;
+	padding: 3px;
+	color: @fg-color;
+}
+
+#workspaces button {
+    all: initial;
+    padding: 0px 7px 0px 6px;
+    background: transparent;
+    border-radius: 16px;
+    color: @fg-color;
+}
+
+#workspaces button.focused, #workspaces button.active, #workspaces button.visible, #workspaces button.empty{
+    background: @selected-bg-color;
+    color: @selected-fg-color;
+}
+
+#clock {
+    padding: 0 6px 0 0;
+}
+
+#clock.time, #custom-timeprefix{
+    color : @fg-color;
+    background-color: @bg-color;
+}
+
+
+#clock.date, #custom-dateprefix, #custom-memoryprefix, #memory{
+    color : @fg-color;
+    background-color: @bg-color;
+}
+
+#custom-cpuprefix, #cpu{
+    color : @fg-color;
+    background-color: @bg-color;
+}
+
+#custom-cpuprefix{
+    border-radius: 16px 0px 0px 16px ;
+}
