@@ -47,6 +47,7 @@ imports = [
             ./misc/foot.nix
             ./misc/waybar-sway.nix
             ./misc/rofi-config.nix
+            ./misc/dunst.nix
           ];
 
 environment.systemPackages = with pkgs; [
@@ -109,6 +110,7 @@ environment.etc.sway = {
          exec_always sh -c "until killall swaybar; do sleep 0.5; done"
 
          exec waybar
+         exec dunst
 
          set $menu /etc/run-rofi.sh -show drun
          bindsym --no-warn $mod+d exec $menu
